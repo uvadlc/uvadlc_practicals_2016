@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -n 1
+#SBATCH -p gpu
+#SBATCH -t 00:00:10
+#SBATCH -o fibonacci_%A.output
+#SBATCH -e fibonacci_%A.error
+
+module load python/2.7.11
+module load cuda/7.5.18
+module load cudnn/7.5-v5
+
+python fibonacci.py 2
