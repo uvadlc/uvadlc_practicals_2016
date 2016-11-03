@@ -1,7 +1,7 @@
 import copy
 """
 This module implements Solver that optimize model parameters using provided optimizer.
-You should fill in code into indicated sections. 
+You should fill in code into indicated sections.
 """
 
 class Solver(object):
@@ -50,7 +50,7 @@ class Solver(object):
     ########################################################################################
     # TODO:                                                                                #
     # Compute gradient of the loss on the batch with the respect to model parameters.      #
-    # Compute gradient of the loss with respect ot parametrs of the model.                 #
+    # Compute gradient of the loss with respect to parameters of the model.                #
     ########################################################################################
     out = None
     loss = None
@@ -251,4 +251,3 @@ class Solver(object):
     ########################################################################################
 
     return score
- 

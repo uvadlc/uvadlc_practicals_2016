@@ -20,17 +20,17 @@ class Layer(object):
 
   def initialize(self):
     """
-    Cleans cache. Cache stores intermediate variables needed for backward computation. 
+    Cleans cache. Cache stores intermediate variables needed for backward computation.
 
     """
     self.cache = None
 
   def layer_loss(self):
     """
-    Returns partial loss of layer parameters for regularization term of full loss.
-    
+    Returns the loss of the layer parameters for the regularization term of full network loss.
+
     Returns:
-      loss: Partial loss of layer parameters.
+      loss: Loss of the layer parameters for the regularization term of full network loss.
 
     """
     return 0.
@@ -55,7 +55,7 @@ class Layer(object):
 
     Args:
       x: Input to the layer.
-  
+
     Returns:
       out: Output of the layer.
 
@@ -68,7 +68,7 @@ class Layer(object):
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradient of the output with respect to the input of the layer.
 
@@ -88,14 +88,14 @@ class LinearLayer(Layer):
       layer_params: Dictionary with parameters for the layer:
           input_size - input dimension;
           output_size - output dimension;
-          weight_decay - regularization parameter for the weights;
+          weight_decay - L2-regularization parameter for the weights;
           weight_scale - scale of normal distrubtion to initialize weights.
-      
+
     """
 
     self.layer_params = layer_params
     self.layer_params.setdefault('weight_decay', 0.0)
-    self.layer_params.setdefault('weight_scale', 0.001)
+    self.layer_params.setdefault('weight_scale', 0.0001)
 
     self.params = {'w': None, 'b': None}
     self.grads = {'w': None, 'b': None}
@@ -104,8 +104,8 @@ class LinearLayer(Layer):
 
   def initialize(self):
     """
-    Initializes weights and biases. Cleans cache. 
-    Cache stores intermediate variables needed for backward computation. 
+    Initializes the weights and biases. Cleans cache.
+    Cache stores intermediate variables needed for backward computation.
 
     """
     ########################################################################################
@@ -114,21 +114,21 @@ class LinearLayer(Layer):
     # std = self.layer_params['weight_scale'].                                             #
     #                                                                                      #
     # Initialize biases self.params['b'] with 0.                                           #
-    ######################################################################################## 
+    ########################################################################################
     self.params['w'] = None
     self.params['b'] = None
     ########################################################################################
     #                              END OF YOUR CODE                                        #
     ########################################################################################
-    
+
     self.cache = None
 
   def layer_loss(self):
     """
-    Returns partial loss of layer parameters for regularization term of full loss.
-    
+    Returns the loss of the layer parameters for the regularization term of full network loss.
+
     Returns:
-      loss: Partial loss of layer parameters.
+      loss: Loss of the layer parameters for the regularization term of full network loss.
 
     """
 
@@ -136,7 +136,7 @@ class LinearLayer(Layer):
     # TODO:                                                                                #
     # Compute the loss of the layer which responsible for L2 regularization term. Store it #
     # in loss variable.                                                                    #
-    ######################################################################################## 
+    ########################################################################################
     loss = None
     ########################################################################################
     #                              END OF YOUR CODE                                        #
@@ -149,18 +149,18 @@ class LinearLayer(Layer):
 
     Args:
       x: Input to the layer.
-    
+
     Returns:
       out: Output of the layer.
-    
+
     """
     ########################################################################################
     # TODO:                                                                                #
-    # Implement forward pass for LinearLayer. Store output of the layer in out varible.    #
+    # Implement forward pass for LinearLayer. Store output of the layer in out variable.    #
     #                                                                                      #
     # Hint: You can store intermediate variables in self.cache which can be used in        #
     # backward pass computation.                                                           #
-    ######################################################################################## 
+    ########################################################################################
     out = None
 
     # Cache if in train mode
@@ -178,7 +178,7 @@ class LinearLayer(Layer):
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradients with respect to the input of the layer.
 
@@ -193,7 +193,7 @@ class LinearLayer(Layer):
     # with respect to the input in dx variable.                                            #
     #                                                                                      #
     # Hint: Use self.cache from forward pass.                                              #
-    ######################################################################################## 
+    ########################################################################################
     dx = None
     self.grads['w'] = None
     self.grads['b'] = None
@@ -214,10 +214,10 @@ class ReLULayer(Layer):
 
     Args:
       x: Input to the layer.
-    
+
     Returns:
       out: Output of the layer.
-    
+
     """
     ########################################################################################
     # TODO:                                                                                #
@@ -225,7 +225,7 @@ class ReLULayer(Layer):
     #                                                                                      #
     # Hint: You can store intermediate variables in self.cache which can be used in        #
     # backward pass computation.                                                           #
-    ######################################################################################## 
+    ########################################################################################
     out = None
 
     # Cache if in train mode
@@ -234,7 +234,7 @@ class ReLULayer(Layer):
     ########################################################################################
     #                              END OF YOUR CODE                                        #
     ########################################################################################
-    
+
     return out
 
   def backward(self, dout):
@@ -243,7 +243,7 @@ class ReLULayer(Layer):
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradients with respect to the input of the layer.
 
@@ -254,7 +254,7 @@ class ReLULayer(Layer):
     # the input in dx variable.                                                            #
     #                                                                                      #
     # Hint: Use self.cache from forward pass.                                              #
-    ######################################################################################## 
+    ########################################################################################
     dx = None
     ########################################################################################
     #                              END OF YOUR CODE                                        #
@@ -273,10 +273,10 @@ class SigmoidLayer(Layer):
 
     Args:
       x: Input to the layer.
-    
+
     Returns:
       out: Output of the layer.
-    
+
     """
     ########################################################################################
     # TODO:                                                                                #
@@ -293,7 +293,7 @@ class SigmoidLayer(Layer):
     ########################################################################################
     #                              END OF YOUR CODE                                        #
     ########################################################################################
-    
+
     return out
 
   def backward(self, dout):
@@ -302,7 +302,7 @@ class SigmoidLayer(Layer):
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradients with respect to the input of the layer.
 
@@ -332,10 +332,10 @@ class TanhLayer(Layer):
 
     Args:
       x: Input to the layer.
-    
+
     Returns:
       out: Output of the layer.
-    
+
     """
     ########################################################################################
     # TODO:                                                                                #
@@ -352,7 +352,7 @@ class TanhLayer(Layer):
     ########################################################################################
     #                              END OF YOUR CODE                                        #
     ########################################################################################
-    
+
     return out
 
   def backward(self, dout):
@@ -361,7 +361,7 @@ class TanhLayer(Layer):
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradients with respect to the input of the layer.
 
@@ -393,7 +393,7 @@ class ELULayer(Layer):
     Args:
       layer_params: Dictionary with parameters for the layer:
           alpha - alpha parameter;
-      
+
     """
     self.layer_params = layer_params
     self.layer_params.setdefault('alpha', 1.0)
@@ -405,10 +405,10 @@ class ELULayer(Layer):
 
     Args:
       x: Input to the layer.
-    
+
     Returns:
       out: Output of the layer.
-    
+
     """
     ########################################################################################
     # TODO:                                                                                #
@@ -425,7 +425,7 @@ class ELULayer(Layer):
     ########################################################################################
     #                              END OF YOUR CODE                                        #
     ########################################################################################
-    
+
     return out
 
   def backward(self, dout):
@@ -434,7 +434,7 @@ class ELULayer(Layer):
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradients with respect to the input of the layer.
 
@@ -465,10 +465,10 @@ class SoftMaxLayer(Layer):
 
     Args:
       x: Input to the layer.
-    
+
     Returns:
       out: Output of the layer.
-    
+
     """
     ########################################################################################
     # TODO:                                                                                #
@@ -487,14 +487,14 @@ class SoftMaxLayer(Layer):
     ########################################################################################
 
     return out
-  
+
   def backward(self, dout):
     """
     Backward pass.
 
     Args:
       dout: Gradients of the previous layer.
-    
+
     Returns:
       dx: Gradients with respect to the input of the layer.
 
@@ -512,4 +512,3 @@ class SoftMaxLayer(Layer):
     ########################################################################################
 
     return dx
-

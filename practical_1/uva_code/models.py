@@ -11,7 +11,7 @@ class Network(object):
   """
   def __init__(self):
     """
-    Initializes the layer according to layer parameters.
+    Initializes the model.
 
     """
     self.layers = []
@@ -103,7 +103,8 @@ class Network(object):
 
   def loss(self, out, y):
     """
-    Computes loss and gradient of the loss with the respect to the input data.
+    Computes loss and gradient of the loss with the respect to the out. Out is the output
+    of the last layer of the network.
 
     Args:
       out: Output of the network after forward pass.
@@ -111,12 +112,12 @@ class Network(object):
 
     Returns:
       loss: Scalar loss.
-      dout: Gradient of the loss with the respect to the input x.
+      dout: Gradient of the loss with the respect to the out.
 
     """
     ########################################################################################
     # TODO:                                                                                #
-    # Compute loss and gradient of the loss with the respect to output. Store them in loss #
+    # Compute loss and gradient of the loss with the respect to out. Store them in loss    #
     # and dout variables respectively.                                                     #
     ########################################################################################
     loss = None

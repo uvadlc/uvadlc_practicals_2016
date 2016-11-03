@@ -1,15 +1,15 @@
 """
 This module implements various losses for the network.
-You should fill in code into indicated sections. 
+You should fill in code into indicated sections.
 """
 
 def HingeLoss(x, y):
   """
-  Computes hinge loss and gradient of the loss with the respect to the input for multiclass SVM.
+  Computes multi-class hinge loss and gradient of the loss with the respect to the input for multiclass SVM.
 
   Args:
     x: Input data.
-    y: Labels of data. 
+    y: Labels of data.
 
   Returns:
     loss: Scalar hinge loss.
@@ -31,16 +31,16 @@ def HingeLoss(x, y):
 
 def CrossEntropyLoss(x, y):
   """
-  Computes cross entropy loss and gradient with the respect to the input.
+  Computes multi-class cross entropy loss and gradient with the respect to the input x.
 
   Args:
     x: Input data.
-    y: Labels of data. 
+    y: Labels of data.
 
   Returns:
-    loss: Scalar cross entropy loss.
+    loss: Scalar multi-class cross entropy loss.
     dx: Gradient of the loss with the respect to the input x.
-  
+
   """
   ########################################################################################
   # TODO:                                                                                #
@@ -58,11 +58,11 @@ def CrossEntropyLoss(x, y):
 
 def SoftMaxLoss(x, y):
   """
-  Computes the loss and gradient with the respect to the input for softmax classfier.
+  Computes the loss and gradient with the respect to the input x.
 
   Args:
     x: Input data.
-    y: Labels of data. 
+    y: Labels of data.
 
   Returns:
     loss: Scalar softmax loss.
@@ -81,4 +81,3 @@ def SoftMaxLoss(x, y):
   ########################################################################################
 
   return loss, dx
-
