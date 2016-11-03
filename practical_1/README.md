@@ -7,6 +7,8 @@ For those who are not familiar with python it is highly recommended to check htt
 
 Also, check an ipython tutorial http://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb.
 
+**You should use python 2.7 for this assignment. Please, don't use python 3.x beacause there are some issues with pickle.**
+
 ## Instructions
 The assignment consists of two parts: an ipython notebook **python_assignment_1.ipynb** and a pdf file **paper_assignment_1.pdf** with exercises that you will have to solve with pen and paper. You should follow the instructions in these files. You should work on both parts of the assignment.
 
