@@ -100,13 +100,13 @@ We give you three example job files: example_job_interactive.sh and example_job.
   - The interactive mode is good for short or fast experiments. If you are going to run an experiment that takes longer, you should use the command *sbatch*. For using this you can check the second file, example_job.sh. The last command is calling the python script directly. However, the difference now is that we do not call the job file directly, instead we use the *sbatch* command:
 
 ```bash
-sbatch example_job.sh
+sbatch example_job.job
 ```
 
 You can run the third job file as
 
 ```bash
-sbatch example_job_gpu.sh
+sbatch example_job_gpu.job
 ```
 
 This file additionally contains the header "#SBATCH gpu", which states that we require a gpu. Also, it loads modules that we need to run processes in the GPU, such as cuda and cudnn. Note that if you ask for nodes that have GPUs only your experiment might take a while to start as the nodes with the GPUs might already be occupied for another process.
@@ -118,7 +118,7 @@ This file additionally contains the header "#SBATCH gpu", which states that we r
 Once you have your job file, you can run your experiment:
 
 ```bash
-sbatch example_job.sh
+sbatch example_job.job
 ```
 
 Then you have your experiment submitted through the batching system. If you want to see what jobs you have submitted, you can run:
