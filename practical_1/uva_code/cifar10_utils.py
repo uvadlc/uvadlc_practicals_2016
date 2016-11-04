@@ -9,7 +9,6 @@ You don't need to change anything here.
 
 # Default paths for downloading CIFAR10 data
 CIFAR10_FOLDER = 'cifar10/cifar-10-batches-py'
-CIFAR10_DOWNLOAD_SCRIPT = 'cifar10/get_cifar10.sh'
 
 def load_cifar10_batch(batch_filename):
   """ 
@@ -67,8 +66,6 @@ def get_cifar10_raw_data():
     X_test: CIFAR10 test data in numpy array with shape (10000, 32, 32, 3).
     Y_test: CIFAR10 test labels in numpy array with shape (10000, ).
   """
-  if not os.path.exists(CIFAR10_FOLDER):
-    os.system(CIFAR10_DOWNLOAD_SCRIPT)
 
   X_train, Y_train, X_test, Y_test = load_cifar10(CIFAR10_FOLDER)
 
