@@ -323,15 +323,18 @@ The report should contain the following sections:
 - **References** : Reference section if needed.
 
 ### Submission
-Create zip archive with the following structure:
+Create zip archive with the following structure: (Still work in progress, stay up-to-date by following our announcements.)
 
 ```
 lastname_assignment_2.zip
 │   report_lastname.pdf
-│   mlp.py
-│   train_mlp.py
+│   convnet.py
+|   siamese.py
+│   train_model.py
+|   retrain_vgg.py
+|   vgg.py
 ```
 
 Replace `lastname` with your last name. After you create the zip file, please send it to **uva.deeplearning@gmail.com ONLY**. Because of the large number of students if you send it to any other email, we cannot guarantee that it will be corrected in time. As the subject of the email use: "Assignment 2: Your Full Name".
 
-The deadline for the assignment is the **18th of November, 23:59**.
+The deadline for the assignment is the **8th of December, 23:59**. (Tentative, will be updated.)
