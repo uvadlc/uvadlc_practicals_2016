@@ -151,7 +151,7 @@ We have provided to you several files:
 
 - ***cifar10/get_cifar10.sh*** : Shell script to download CIFAR10 data as in the Practical 1.
 
-### Task 1: CIFAR10  [40 points total]
+### Task 1: CIFAR10  [40 points]
 We are going to build a CNN model using TensorFlow. Unlike previous practicals, you are given a fixed network to work with. This task involves the implementation of a lightweight class, namely `ConvNet() `. In the class `ConvNet()` you need to complete the methods:
 
 - `inference(*args)`
@@ -207,7 +207,7 @@ Following the spirit passed on from previous practicals, you are going to train 
 
 - Can you improve test performance by using regularization techniques? Try L2 weight regularization on the fully-connected layers. You can also try others regularization techniques like dropout and batch normalization. Report your conclusions in your report with experimental support.         
 
-### Task 2: CIFAR10 Siamese [30 points total]
+### Task 2: CIFAR10 Siamese [30 points]
 Now that you have learned how to implement CNN model in TensorFlow you can take it a bit further and start getting familiar with `weight/parameter sharing` idea. It is an important concept which you might encounter quite often in practice. In this exercise we are going to focus on a particular architecture, referred to as *Siamese*, which is based on parameter sharing idea. This task involves the implementation of another lightweight class, namely `Siamese() `. In class `Siamese()` you need to complete the methods as you did for `ConvNet()`:
 
 - `inference(*args)`
