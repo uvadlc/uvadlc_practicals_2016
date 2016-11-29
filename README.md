@@ -8,3 +8,4 @@
 4. **The practical 6 about paper presentations is released**. You can now start reading and selecting papers for the presentation.
 5. **The practical 2 is fully released**. The deadline is the **18th of November, 23:59**.
 6. **The practical 3 is fully released**. The deadline is the **7th of December, 23:59**.
+7. **Simple unit tests for practical 1 are released**. Check practical_1/tests. 
