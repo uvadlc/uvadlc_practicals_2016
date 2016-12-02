@@ -119,7 +119,7 @@ def dense_to_one_hot(labels_dense, num_classes):
   labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
   return labels_one_hot
 
-def create_dataset(source='Train', num_tuples = 500, batch_size = 128, fraction_same = 0.2):
+def create_dataset(source_data, num_tuples = 500, batch_size = 128, fraction_same = 0.2):
     """
     Creates a list of validation tuples. A tuple consist of image pairs and a label.
     A tuple is basically a minibatch to be used in validation.
@@ -143,7 +143,7 @@ def create_dataset(source='Train', num_tuples = 500, batch_size = 128, fraction_
     The ratio between the number of + and - cases is controlled by fraction_same.
 
     Args:
-      source: Where to sample from train or test set.
+      source_data: Subset of CIFAR10 data to sample from. You can use validation split here.
       num_tuples: Number of tuples to be used in the validation
       batch_size: Batch size.
       fraction_same: float in range [0,1], defines the fraction
